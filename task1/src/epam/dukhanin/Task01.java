@@ -1,13 +1,13 @@
 package epam.dukhanin;
 
-public class Main {
+public class Task01 {
 
     public static void main(String[] args) {
-        /*DataTypesTester.testByte();
+        DataTypesTester.testByte();
         DataTypesTester.testShort();
         DataTypesTester.testInt();
-        DataTypesTester.testLong();*/
-        //DataTypesTester.testFloat();
+        DataTypesTester.testLong();
+        DataTypesTester.testFloat();
         DataTypesTester.testDouble();
     }
 }
