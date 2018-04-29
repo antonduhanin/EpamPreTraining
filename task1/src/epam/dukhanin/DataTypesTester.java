@@ -921,6 +921,7 @@ public class DataTypesTester {
 
     public static void testChar() {
 
+
     }
 
     public static void testDouble() {
