@@ -1,7 +1,7 @@
 package epam.dukhanin;
 
 import epam.dukhanin.fifth.CountNumbers;
-import epam.dukhanin.first.ConverterWeight;
+import epam.dukhanin.first.WeightConverter;
 import epam.dukhanin.fourth.CheckerSequence;
 import epam.dukhanin.third.Swapper;
 import epam.dukhanin.second.AreaCalculator;
@@ -12,13 +12,13 @@ public class Test {
     public static void main(String[] args) {
 
         //first: weight of dinosaur
-        double weightKg = 26.2;
+        double weightKilograms = 26.2;
 
-        double weightGr = ConverterWeight.convertKgToGr(weightKg);
-        double weightT = ConverterWeight.convertKgToT(weightKg);
-        double weightMg = ConverterWeight.convertKgToMg(weightKg);
+        double weightGrams = WeightConverter.convertKilogramToGrams(weightKilograms);
+        double weightTones = WeightConverter.convertKilogramToTones(weightKilograms);
+        double weightMilligrams = WeightConverter.convertKilogramToMilligrams(weightKilograms);
 
-        System.out.printf("%.2f kg it's %.2f grams, %.4f tons, %.2f Milligrams\n", weightKg, weightGr, weightT, weightMg);
+        System.out.printf("%.2f kg it's %.2f grams, %.4f tons, %.2f Milligrams\n", weightKilograms, weightGrams, weightTones, weightMilligrams);
 
         //second: area of ring
         double radiusFirst = 24;
@@ -41,13 +41,14 @@ public class Test {
 
 
         //fifth: sum and multiplication numbers
-        int number = 2334;
+        int number = 23324;
         int multiplication = CountNumbers.multiplyNumbers(number);
         int sum = CountNumbers.addNumbers(number);
         System.out.println("multiplication of numbers: " + multiplication + "\nsum of numbers: " + sum);
 
 
         //sixth: Arithmetic and Geometric Mean
+        number = 123123;
         double s = Means.findArithmeticMean(number);
         System.out.println("Arithmetic mean of numbers: " + s);
         s = Means.findGeometricMean(number);

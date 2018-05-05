@@ -10,10 +10,9 @@ public class Swapper {
     }
 
     public void swapInt() {
-        // a = 5; b =7;
-        a = a + b;//a=12 b =7
-        b = a - b;//a =12 b =5
-        a = a - b;// a = 7 b=5
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
     }
 
     @Override

@@ -1,18 +1,30 @@
 package epam.dukhanin.fourth;
 
 public class CheckerSequence {
-    //return true if sequence is increase
+    private final static int DIGIT_NUMBER = 10;
+
+    //return true if sequence of 4 digit number is increase
     public static boolean increaseSequence(int a) {
-        boolean increase = true;
-        int oneDigitalNumberPreviously = 10;
-        while (a > 0) {
-            int oneDigitalNumberCurrent = a % 10;
-            if (oneDigitalNumberPreviously != 10 && oneDigitalNumberPreviously < oneDigitalNumberCurrent) {
-                increase = false;
-            }
-            oneDigitalNumberPreviously = oneDigitalNumberCurrent;
-            a = a / 10;
+        int oneDigitalNumberFirst = a % DIGIT_NUMBER;
+        a /= DIGIT_NUMBER;
+        int oneDigitalNumberSecond = a % DIGIT_NUMBER;
+        if (oneDigitalNumberFirst < oneDigitalNumberSecond) {
+            return false;
         }
-        return increase;
+
+        oneDigitalNumberFirst = oneDigitalNumberSecond;
+        a /= DIGIT_NUMBER;
+        oneDigitalNumberSecond = a % DIGIT_NUMBER;
+        if (oneDigitalNumberFirst < oneDigitalNumberSecond) {
+            return false;
+        }
+
+        oneDigitalNumberFirst = oneDigitalNumberSecond;
+        a /= DIGIT_NUMBER;
+        oneDigitalNumberSecond = a;
+        if (oneDigitalNumberFirst < oneDigitalNumberSecond) {
+            return false;
+        }
+        return true;
     }
 }
