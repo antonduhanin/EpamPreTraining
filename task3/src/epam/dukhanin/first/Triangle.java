@@ -22,7 +22,7 @@ public class Triangle {
             triangle = false;
         } else if (ab + cb <= ac) {
             triangle = false;
-        } else if (cb + ac <= ac) {
+        } else if (cb + ac <= ab) {
             triangle = false;
         }
         return triangle;

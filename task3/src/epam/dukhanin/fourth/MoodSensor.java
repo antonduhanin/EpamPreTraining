@@ -7,9 +7,9 @@ public class MoodSensor {
         String s = "my current mood is: ";
         Random random = new Random();
         if (random.nextBoolean()) {
-            s += '\u263A';
+            s += ":)" ;
         } else {
-            s += '\u2639';
+            s += ":(";
         }
         return s;
     }

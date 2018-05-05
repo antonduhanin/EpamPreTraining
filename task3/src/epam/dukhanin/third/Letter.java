@@ -11,6 +11,7 @@ public class Letter {
         for (char v : vowels) {
             if (c == v) {
                 isVowel = true;
+                break;
             }
         }
         return isVowel;
@@ -28,20 +29,11 @@ public class Letter {
         boolean isVowel = false;
         switch (c) {
             case 'a':
-                isVowel = true;
-                break;
             case 'e':
-                isVowel = true;
-                break;
             case 'i':
-                isVowel = true;
-                break;
             case 'o':
-                isVowel = true;
-                break;
             case 'u':
-                isVowel = true;
-                break;
+                isVowel=true;
         }
         return isVowel;
     }
