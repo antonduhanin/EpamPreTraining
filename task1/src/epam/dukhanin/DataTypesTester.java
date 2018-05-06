@@ -920,6 +920,176 @@ public class DataTypesTester {
 
 
     public static void testChar() {
+        System.out.println("\n***** Arithmetical Operators with char*****");
+        char a = 23;
+        char b = 'a';
+
+        char c;
+        //additional
+        c = (char) (a + b);
+        System.out.printf("%c + %c = %c\n", a, b, c);
+        // subtraction
+        //c = (char)a - b; incompatible types
+        // multiplication
+        c = (char) (a * b);
+        System.out.printf("%c * %c = %c\n", a, b, c);
+        c = (char) (a / b);
+        System.out.printf("%c / %c = %c\n", a, b, c);
+
+        // modulus
+        c = (char) (a % b);
+        System.out.printf("%c %% %c = %c\n", a, b, c);
+
+        c = (char) -a;
+        System.out.printf("-%c = %c\n", a, c);
+        // unary plus
+        c = (char) +a;
+        System.out.printf("+%c = %c\n", a, c);
+
+
+        // postfix increment
+        //c = a++ + b++;
+        // prefix increment
+        //c = ++a + ++b;
+        // postfix decrement
+        //c = a-- + b--;
+        // prefix decrement
+        //c = --a + --b;
+
+        System.out.println("\n***** Bitwise Operators *****");
+        a = 3;
+        b = 5;
+        // bitwise AND
+        c = (char) (a & b);
+        System.out.printf("%c & %c = %c\n", a, b, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s & %s = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+        // bitwise OR
+        c = (char) (a | b);
+        System.out.printf("%c | %c = %c\n", a, b, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s | %s = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+        // bitwise XOR
+        c = (char) (a ^ b);
+        System.out.printf("%c ^ %c = %c\n", a, b, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s ^ %s = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(b), Integer.toBinaryString(c));
+        // bitwise unary compliment
+        c = (char) ~a;
+        System.out.printf("~%c = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("~%s = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+        // left shift
+        c = (char) (a << 1);
+        System.out.printf("%c << 1 = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s << 1 = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+        //right shift
+        c = (char) (a >> 1);
+        System.out.printf("%c >> 1 = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s >> 1 = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+
+        a = (char) -3;
+        //right shift
+        c = (char) (a >> 1);
+        System.out.printf("%c >> 1 = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s >> 1 = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+
+        a = 3;
+        // zero fill right shift
+        c = (char) (a >>> 1);
+        System.out.printf("%c >>> 1 = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s >>> 1 = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+
+        a = (char) -3;
+        // zero fill right shift
+        c = (char) (a >>> 1);
+        System.out.printf("%c >>> 1 = %c\n", a, c);
+        System.out.println("in binary form:");
+        System.out.printf("%s >>> 1 = %s\n", Integer.toBinaryString(a), Integer.toBinaryString(c));
+
+
+        System.out.println("\n***** Assignment Operators *****");
+
+        System.out.printf("%c += %c --> c = %c\n", c, a, c += a);
+        System.out.printf("%c -= %c --> c = %c\n", c, a, c -= a);
+        System.out.printf("%c *= %c --> c = %c\n", c, a, c *= a);
+        System.out.printf("%c /= %c --> c = %c\n", c, a, c /= a);
+        System.out.printf("%c %%= %c --> c = %c\n", c, a, c %= a);
+
+//        c %= 0; java.lang.ArithmeticException: / by zero
+//        System.out.printf("%f %%= 0 = %f\n", a, c);
+//        c /= 0;
+//        System.out.printf("%f /= 0 = %f\n", a, c);
+
+        c |= a;
+        c &= a;
+        c ^= a;
+        c >>= 1;
+        c <<= 1;
+        c >>>= 1;
+
+
+        System.out.println("\n***** Relational Operators *****");
+        // greater than
+        System.out.printf("%c > %c --> %b\n", a, b, a > b);
+        // greater than or equal to
+        System.out.printf("%c >= %c --> %b\n", a, b, a >= b);
+        // less than
+        System.out.printf("%c < %c --> %b\n", a, b, a < b);
+        // less than or equal to
+        System.out.printf("%c <= %c --> %b\n", a, b, a <= b);
+        // equal to
+        System.out.printf("%c == %c --> %b\n", a, b, a == b);
+        // not equal to
+        System.out.printf("%c != %c --> %b\n", a, b, a != b);
+
+        System.out.println("\n***** Logical Operations *****");
+        // logical AND
+        System.out.printf("(%c > %c) && (%c > 0) --> %b\n", a, b, a, (a > b) && (a > 0));
+        // bitwise logical AND
+        System.out.printf("(%c > %c) & (%c > 0) --> %b\n", a, b, a, (a > b) & (a > 0));
+        // logical OR
+        System.out.printf("(%c >= %c) || (%c != 0) --> %b\n", a, b, b, (a >= b) || (b != 0));
+        // bitwise logical OR
+        System.out.printf("(%c >= %c) | (%c != 0) --> %b\n", a, b, b, (a >= b) | (b != 0));
+        // logical XOR
+        System.out.printf("(%c >= %c) | (%c != 0) --> %b\n", a, b, b, (a >= b) ^ (b != 0));
+
+        // logical NOT
+        //System.out.printf("!(%c >= %c) --> %b\n", a, b, !(a >= b));
+
+        System.out.println("\n***** Misc Operators *****");
+        System.out.println("\nCondition Operator:");
+        System.out.printf("%c > %c ? %c : %c --> %c\n", a, b, a, b, (a > b ? a : b));
+
+
+        System.out.println("\nType Cast Operator:");
+
+        byte bt = 1;
+        short sh = -31777;
+        int nt = 231;
+        long l = 100000000000000000L;
+        float f = 1.9f;
+        double d = 123456789.625;
+        boolean bool = true;
+
+        c = (char) bt;
+        System.out.printf("char = byte: c = (char)%d --> c = %c\n", bt, c);
+        c = (char) sh;
+        System.out.printf("char = short: c = (char)%d --> c = %c\n", sh, c);
+        c = (char) nt;
+        System.out.printf("char = int: c = '%c' --> c = %c\n", nt, c);
+        c = (char) l;
+        System.out.printf("char = long: c = (char)%d --> c = %c\n", l, c);
+        c = (char) f;
+        System.out.printf("char = float: c = (char)%f --> c = %c\n", f, c);
+        c = (char) d;
+        System.out.printf("char = double: c = (char)%f --> c = %c\n", d, c);
+        // c = (char)bool;   System.out.printf("char = boolean: c = (char)%b --> Compile Error\n",     bool);
 
 
     }
