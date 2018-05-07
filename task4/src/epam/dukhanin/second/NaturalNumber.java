@@ -1,4 +1,4 @@
-package epam.dukhanin.epam.dukhanin.second;
+package epam.dukhanin.second;
 
 public class NaturalNumber {
     private final static int ONE_DIGIT = 10;
@@ -11,7 +11,7 @@ public class NaturalNumber {
             if (maxDigit < lastDigit) {
                 maxDigit = lastDigit;
             }
-            number = number / 10;
+            number = number / ONE_DIGIT;
         }
         return maxDigit;
     }
@@ -90,35 +90,30 @@ public class NaturalNumber {
                     four = true;
                     break;
                 case 5:
-
                     if (five == true) {
                         different = false;
                     }
                     five = true;
                     break;
                 case 6:
-
                     if (six == true) {
                         different = false;
                     }
                     six = true;
                     break;
                 case 7:
-
                     if (seven == true) {
                         different = false;
                     }
                     seven = true;
                     break;
                 case 8:
-
                     if (eight == true) {
                         different = false;
                     }
                     eight = true;
                     break;
                 case 9:
-
                     if (nine == true) {
                         different = false;
                     }
@@ -134,7 +129,7 @@ public class NaturalNumber {
                 numberDifferentNumbers++;
             }
             different = true;
-            a = a / 10;
+            a = a / ONE_DIGIT;
 
         }
         return numberDifferentNumbers;
