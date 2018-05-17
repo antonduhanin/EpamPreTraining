@@ -5,7 +5,8 @@ import java.util.regex.Pattern;
 
 public class Letter {
     public static boolean isVowelFirst(char c) {
-        c = toLowerCase(c);
+
+        c = new Character(c).toLowerCase(c);
         char[] vowels = {'a', 'e', 'i', 'o', 'u'};
         boolean isVowel = false;
         for (char v : vowels) {
@@ -18,14 +19,14 @@ public class Letter {
     }
 
     public static boolean isVowelSecond(char c) {
-        c = toLowerCase(c);
+        c = new Character(c).toLowerCase(c);
         Pattern vowelPattern = Pattern.compile("[aeiou]");
         Matcher vowelMatcher = vowelPattern.matcher("" + c);
         return vowelMatcher.find();
     }
 
     public static boolean isVowelThird(char c) {
-        c = toLowerCase(c);
+        c = new Character(c).toLowerCase(c);
         boolean isVowel = false;
         switch (c) {
             case 'a':
@@ -33,13 +34,13 @@ public class Letter {
             case 'i':
             case 'o':
             case 'u':
-                isVowel=true;
+                isVowel = true;
         }
         return isVowel;
     }
 
     public static boolean isVowelFourth(char c) {
-        c = toLowerCase(c);
+        c = new Character(c).toLowerCase(c);
         boolean isVowel = false;
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
             isVowel = true;
@@ -47,8 +48,4 @@ public class Letter {
         return isVowel;
     }
 
-    private static char toLowerCase(char c) {
-        String s = "" + c;
-        return s.toLowerCase().charAt(0);
-    }
 }

@@ -14,22 +14,17 @@ public class Triangle {
     }
 
     public boolean isTriangle() {
-        boolean triangle = true;
         double ab = Math.sqrt(lenAB);
         double ac = Math.sqrt(lenAC);
         double cb = Math.sqrt(lenCB);
-        if (ab + ac <= cb) {
-            triangle = false;
-        } else if (ab + cb <= ac) {
-            triangle = false;
-        } else if (cb + ac <= ab) {
-            triangle = false;
-        }
-        return triangle;
+
+        return !(ab + ac <= cb || ab + cb <= ac || cb + ac <= ab);
+
     }
 
     public boolean isRightTriangle() {
         boolean rightTriangle = false;
+
         if (isTriangle() == false) {
             return rightTriangle;
         } else if (lenAB + lenAC == lenCB) {
