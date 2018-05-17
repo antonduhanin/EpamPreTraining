@@ -6,9 +6,8 @@ import epam.dukhanin.third.PerfectNumber;
 
 public class Test {
     public static void main(String[] args) {
-        CoinToss coinToss = new CoinToss();
-        coinToss.tossCoin(1000);
-        System.out.println(coinToss.toString());
+
+        System.out.println(CoinToss.tossCoin(1000));
 
         System.out.println("biggest digit is: " + NaturalNumber.findBiggestDigit(1238243));
         System.out.println("is palindrome: " + NaturalNumber.isPalindrome(1221));
@@ -17,6 +16,6 @@ public class Test {
         System.out.println("greatest common divisor: " + NaturalNumber.findGreatestCommonDivisor(16, 48));
         System.out.println("least common multiple: " + NaturalNumber.findLeastCommonMultiple(16, 56));
         System.out.println("number of different numbers:" + NaturalNumber.findCountDifferentDigits(223355322));
-        System.out.println("number is perfect: "+ PerfectNumber.isPerfectNumber(8128));
+        System.out.println("number is perfect: " + PerfectNumber.isPerfectNumber(8128));
     }
 }

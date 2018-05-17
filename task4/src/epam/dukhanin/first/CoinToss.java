@@ -3,32 +3,17 @@ package epam.dukhanin.first;
 import java.util.Random;
 
 public class CoinToss {
-    private int heads;
-    private int tails;
 
-    public void tossCoin(int numberTosses) {
+    public static String tossCoin(int numberTosses) {
+        int heads = 0;
         for (int i = 0; i < numberTosses; i++) {
             if (new Random().nextBoolean()) {
                 heads++;
-            } else {
-                tails++;
             }
         }
+        int tails = numberTosses - heads;
+        return "heads: " + heads + "tails: " + tails;
+
     }
 
-    public int getHeads() {
-        return heads;
-    }
-
-    public int getTails() {
-        return tails;
-    }
-
-    @Override
-    public String toString() {
-        return "CoinToss{" +
-                "heads=" + heads +
-                ", tails=" + tails +
-                '}';
-    }
 }

@@ -6,6 +6,7 @@ public class NaturalNumber {
 
     public static int findBiggestDigit(int number) {
         int maxDigit = 0;
+
         while (number > 0) {
             int lastDigit = number % ONE_DIGIT;
             if (maxDigit < lastDigit) {
@@ -19,6 +20,7 @@ public class NaturalNumber {
     public static boolean isPalindrome(int number) {
         int temp = number;
         int reverseNumber = 0;
+
         while (temp > 0) {
             int lastDigit = temp % ONE_DIGIT;
             reverseNumber = reverseNumber * ONE_DIGIT + lastDigit;
@@ -31,6 +33,7 @@ public class NaturalNumber {
         if (number == NOT_PRIME_NUMBER) {
             return false;
         }
+
         for (int i = 2; i * i <= number; i++) {
             if (number % i == 0) {
                 return false;
@@ -62,6 +65,7 @@ public class NaturalNumber {
         one = two = three = four = five = six = seven = eight = nine = zero = false;
         boolean different = true;
         int numberDifferentNumbers = 0;
+
         while (a > 0) {
             int lastDigit = a % ONE_DIGIT;
             switch (lastDigit) {
@@ -138,6 +142,7 @@ public class NaturalNumber {
 
     public static String findSimpleDividers(int a) {
         StringBuilder simpleDividers = new StringBuilder();
+
         for (int i = 2; i < a; i++) {
             if (a % i == 0) {
                 if (isPrime(i) == true) {
