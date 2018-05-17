@@ -29,13 +29,13 @@ public class NaturalNumber {
         return number == reverseNumber;
     }
 
-    public static boolean isPrime(int number) {
-        if (number == NOT_PRIME_NUMBER) {
+    public static boolean isPrime(int n) {
+        if (n == NOT_PRIME_NUMBER) {
             return false;
         }
 
-        for (int i = 2; i * i <= number; i++) {
-            if (number % i == 0) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
                 return false;
             }
         }
