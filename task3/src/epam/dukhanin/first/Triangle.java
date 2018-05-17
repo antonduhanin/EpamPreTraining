@@ -23,18 +23,10 @@ public class Triangle {
     }
 
     public boolean isRightTriangle() {
-        boolean rightTriangle = false;
-
         if (isTriangle() == false) {
-            return rightTriangle;
-        } else if (lenAB + lenAC == lenCB) {
-            rightTriangle = true;
-        } else if (lenAB + lenCB == lenAC) {
-            rightTriangle = true;
-        } else if (lenCB + lenAC == lenAB) {
-            rightTriangle = true;
+            return false;
         }
-        return rightTriangle;
+        return lenAB + lenAC == lenCB || lenAB + lenCB == lenAC || lenCB + lenAC == lenAB;
     }
 
     private double lenSideSquare(Point a, Point b) {
