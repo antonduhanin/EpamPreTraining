@@ -59,92 +59,83 @@ public class NaturalNumber {
         return lcm;
     }
 
-    public static int findCountDifferentDigits(int a) {
-
+    public static int findCountDifferentDigits(int number) {
         boolean one, two, three, four, five, six, seven, eight, nine, zero;
         one = two = three = four = five = six = seven = eight = nine = zero = false;
         boolean different = true;
         int numberDifferentNumbers = 0;
 
-        while (a > 0) {
-            int lastDigit = a % ONE_DIGIT;
-            switch (lastDigit) {
-                case 1:
-                    if (one == true) {
-                        different = false;
-                    }
-                    one = true;
-                    break;
-                case 2:
-                    if (two == true) {
-                        different = false;
-                    }
-                    two = true;
-                    break;
-                case 3:
-                    if (three == true) {
-                        different = false;
-                    }
-                    three = true;
-                    break;
-                case 4:
-                    if (four == true) {
-                        different = false;
-                    }
-                    four = true;
-                    break;
-                case 5:
-                    if (five == true) {
-                        different = false;
-                    }
-                    five = true;
-                    break;
-                case 6:
-                    if (six == true) {
-                        different = false;
-                    }
-                    six = true;
-                    break;
-                case 7:
-                    if (seven == true) {
-                        different = false;
-                    }
-                    seven = true;
-                    break;
-                case 8:
-                    if (eight == true) {
-                        different = false;
-                    }
-                    eight = true;
-                    break;
-                case 9:
-                    if (nine == true) {
-                        different = false;
-                    }
-                    nine = true;
-                    break;
-                case 0:
-                    if (zero == true) {
-                        different = false;
-                    }
-                    zero = true;
+        while (number > 0) {
+            int lastDigit = number % ONE_DIGIT;
+            if (lastDigit == 1) {
+                if (one == true) {
+                    different = false;
+                }
+                one = true;
+            } else if (lastDigit == 2) {
+                if (two == true) {
+                    different = false;
+                }
+                two = true;
+            } else if (lastDigit == 3) {
+                if (three == true) {
+                    different = false;
+                }
+                three = true;
+            } else if (lastDigit == 4) {
+                if (four == true) {
+                    different = false;
+                }
+                four = true;
+            } else if (lastDigit == 5) {
+                if (five == true) {
+                    different = false;
+                }
+                five = true;
+            } else if (lastDigit == 6) {
+                if (six == true) {
+                    different = false;
+                }
+                six = true;
+            } else if (lastDigit == 7) {
+                if (seven == true) {
+                    different = false;
+                }
+                seven = true;
+            } else if (lastDigit == 8) {
+                if (eight == true) {
+                    different = false;
+                }
+                eight = true;
+            } else if (lastDigit == 9) {
+                if (nine == true) {
+                    different = false;
+                }
+                nine = true;
+            } else if (lastDigit == 0) {
+                if (zero == true) {
+                    different = false;
+                }
+                zero = true;
             }
+
             if (different == true) {
                 numberDifferentNumbers++;
             }
+
             different = true;
-            a = a / ONE_DIGIT;
+            number = number / ONE_DIGIT;
 
         }
         return numberDifferentNumbers;
     }
 
 
-    public static String findSimpleDividers(int a) {
+    public static String findSimpleDividers(int number) {
         StringBuilder simpleDividers = new StringBuilder();
 
-        for (int i = 2; i < a; i++) {
-            if (a % i == 0) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
                 if (isPrime(i) == true) {
                     simpleDividers.append(i + " ");
                 }
