@@ -14,14 +14,22 @@ public class Test {
         System.out.println("array sorted: " + ArrayWorker.checkSort(a));
         System.out.println("index of local minimum: " + ArrayWorker.findPositionLocalMinimum(a));
 
+        System.out.println("before reverse: ");
+        for (double element : a) {
+            System.out.print(element+" ");
+        }
+
+        System.out.println("\nafter reverse: ");
+
+        ArrayWorker.reverseMas(a);
+        for (double element : a) {
+            System.out.print(element+" ");
+        }
+        System.out.println();
+
         //individual task
         System.out.println("sum after positive element: " + ArrayWorker.findSumAfterPositiveElement(a));
         System.out.println("index of the element of maximal absolute value: "+ArrayWorker.findIndexMaxAbsValue(a));
 
-        //main task
-        a = ArrayWorker.reverseMas(a);
-        for (double element : a) {
-            System.out.println(element);
-        }
     }
 }

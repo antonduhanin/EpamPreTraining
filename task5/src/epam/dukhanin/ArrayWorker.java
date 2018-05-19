@@ -76,13 +76,12 @@ public class ArrayWorker {
         return -1;
     }
 
-    public static double[] reverseMas(double mas[]) {
+    public static void reverseMas(double mas[]) {
         for (int i = 0; i < mas.length / 2; i++) {
             mas[i] = mas[i] - mas[mas.length - i - 1];
             mas[mas.length - i - 1] = mas[i] + mas[mas.length - i - 1];
             mas[i] = mas[mas.length - i - 1] - mas[i];
         }
-        return mas;
     }
 
     //individual task
