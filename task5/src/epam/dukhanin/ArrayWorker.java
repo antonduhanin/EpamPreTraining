@@ -3,6 +3,7 @@ package epam.dukhanin;
 public class ArrayWorker {
     //main task
     public static double findMax(double mas[]) {
+        checkMas(mas);
         double max = mas[0];
 
         for (int i = 1; i < mas.length; i++) {
@@ -14,6 +15,7 @@ public class ArrayWorker {
     }
 
     public static double findMin(double mas[]) {
+        checkMas(mas);
         double min = mas[0];
 
         for (int i = 1; i < mas.length; i++) {
@@ -25,31 +27,36 @@ public class ArrayWorker {
     }
 
     public static double findArithmeticMean(double mas[]) {
+        checkMas(mas);
+
         double sum = 0;
         for (int i = 0; i < mas.length; i++) {
             sum += mas[i];
         }
-        return sum / (mas.length - 1);
+        return sum / (mas.length);
     }
 
     public static double findGeometricMean(double mas[]) {
+        checkMas(mas);
+
         double multiplication = 1;
         for (int i = 0; i < mas.length; i++) {
             multiplication *= mas[i];
         }
-        return Math.pow(multiplication, 1.0 / mas.length - 1);
+        return Math.pow(multiplication, 1.0 / mas.length);
     }
 
 
-    public static boolean checkSort(double a[]) {
-        if (a.length < 2) {
-            return false;
+    public static boolean checkSort(double mas[]) {
+        checkMas(mas);
+        if (mas.length < 2) {
+            return true;
         }
 
-        boolean decrease = isDecrease(a);
+        boolean decrease = isDecrease(mas);
 
-        for (int i = 0; i < a.length - 1; i++) {
-            if ((!decrease & a[i] > a[i + 1]) | (decrease & a[i] < a[i + 1])) {
+        for (int i = 0; i < mas.length - 1; i++) {
+            if ((!decrease & mas[i] > mas[i + 1]) | (decrease & mas[i] < mas[i + 1])) {
                 return false;
             }
         }
@@ -66,11 +73,12 @@ public class ArrayWorker {
     }
 
     public static int findPositionLocalMinimum(double mas[]) {
+        checkMas(mas);
         for (int i = 0; i < mas.length - 1; i++) {
             if (mas[i] < mas[i + 1]) {
-                return i + 1;
+                return i;
             } else if (mas[i] > mas[i + 1]) {
-                return i + 2;
+                return i + 1;
             }
         }
         return -1;
@@ -85,15 +93,16 @@ public class ArrayWorker {
     }
 
     //individual task
-    public static double findSumAfterPositiveElement(double a[]) {
+    public static double findSumAfterPositiveElement(double mas[]) {
+        checkMas(mas);
         boolean flag = false;
         double sum = 0;
 
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < mas.length; i++) {
             if (flag == true) {
-                sum += a[i];
+                sum += mas[i];
             }
-            if (a[i] > 0) {
+            if (mas[i] > 0) {
                 flag = true;
             }
         }
@@ -111,5 +120,11 @@ public class ArrayWorker {
             }
         }
         return index;
+    }
+
+    private static void checkMas(double[] mas) {
+        if (mas.length < 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 }
