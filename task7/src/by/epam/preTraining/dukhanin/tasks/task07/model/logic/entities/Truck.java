@@ -23,6 +23,7 @@ public class Truck extends AbstractVehicle {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         Truck truck = (Truck) o;
         return payload == truck.payload &&
                 Objects.equals(typeDriverLicense, truck.typeDriverLicense);
@@ -31,7 +32,7 @@ public class Truck extends AbstractVehicle {
     @Override
     public int hashCode() {
 
-        return Objects.hash(payload, typeDriverLicense);
+        return Objects.hash(super.hashCode(), payload, typeDriverLicense);
     }
 
     @Override
@@ -39,6 +40,13 @@ public class Truck extends AbstractVehicle {
         return "Truck{" +
                 "payload=" + payload +
                 ", typeDriverLicense='" + typeDriverLicense + '\'' +
+                ", id=" + id +
+                ", vehicleType='" + vehicleType + '\'' +
+                ", model='" + model + '\'' +
+                ", yearModel=" + yearModel +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", dailyPrice=" + dailyPrice +
                 '}';
     }
 

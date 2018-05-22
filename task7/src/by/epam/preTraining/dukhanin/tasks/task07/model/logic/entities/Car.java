@@ -41,6 +41,13 @@ public class Car extends AbstractVehicle {
         return "Car{" +
                 "numberOfSeats=" + numberOfSeats +
                 ", trunkSpace=" + trunkSpace +
+                ", id=" + id +
+                ", vehicleType='" + vehicleType + '\'' +
+                ", model='" + model + '\'' +
+                ", yearModel=" + yearModel +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", dailyPrice=" + dailyPrice +
                 '}';
     }
 

@@ -5,13 +5,13 @@ import java.util.Objects;
 
 
 public abstract class AbstractVehicle {
-    private long id;
-    private String vehicleType;
-    private String model;
-    private int yearModel;
-    private String color;
-    private BigDecimal price;
-    private BigDecimal dailyPrice;
+    protected long id;
+    protected String vehicleType;
+    protected String model;
+    protected int yearModel;
+    protected String color;
+    protected BigDecimal price;
+    protected BigDecimal dailyPrice;
 
     public AbstractVehicle() {
     }
@@ -43,6 +43,19 @@ public abstract class AbstractVehicle {
     public int hashCode() {
 
         return Objects.hash(id, vehicleType, model, yearModel, color, price, dailyPrice);
+    }
+
+    @Override
+    public String toString() {
+        return "AbstractVehicle{" +
+                "id=" + id +
+                ", vehicleType='" + vehicleType + '\'' +
+                ", model='" + model + '\'' +
+                ", yearModel=" + yearModel +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", dailyPrice=" + dailyPrice +
+                '}';
     }
 
     public long getId() {
