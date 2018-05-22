@@ -54,7 +54,7 @@ public class Test {
         }
 
         //test rent order
-        RentOrder rentOrder = new RentOrder(1, car, new Date(), new Date(), new BigDecimal(12), new BigDecimal(0));
+        RentOrder rentOrder = new RentOrder(1, vehicleList, new Date(), new Date(), new BigDecimal(12), new BigDecimal(0));
 
 
     }

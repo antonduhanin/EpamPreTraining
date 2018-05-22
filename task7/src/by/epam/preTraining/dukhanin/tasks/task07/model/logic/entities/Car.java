@@ -2,6 +2,7 @@ package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
 
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Car extends AbstractVehicle {
     public final static String VEHICLE_TYPE = "Car";
@@ -17,6 +18,30 @@ public class Car extends AbstractVehicle {
         super.setVehicleType(VEHICLE_TYPE);
         this.numberOfSeats = numberOfSeats;
         this.trunkSpace = trunkSpace;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Car car = (Car) o;
+        return numberOfSeats == car.numberOfSeats &&
+                trunkSpace == car.trunkSpace;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), numberOfSeats, trunkSpace);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "numberOfSeats=" + numberOfSeats +
+                ", trunkSpace=" + trunkSpace +
+                '}';
     }
 
     public int getNumberOfSeats() {

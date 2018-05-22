@@ -1,23 +1,68 @@
 package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
 
+import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.VehicleList;
+
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 public class RentOrder {
     private long id;
-    private AbstractVehicle vehicle;
+    private VehicleList vehicleList;
     private Date startDate;
     private Date endDate;
     private BigDecimal rentTotal;
     private BigDecimal penalty;
 
-    public RentOrder(long id, AbstractVehicle vehicle, Date startDate, Date endDate, BigDecimal rentTotal, BigDecimal penalty) {
+    public RentOrder() {
+    }
+
+    public RentOrder(long id, VehicleList vehicleList, Date startDate, Date endDate, BigDecimal rentTotal, BigDecimal penalty) {
         this.id = id;
-        this.vehicle = vehicle;
+        this.vehicleList = vehicleList;
         this.startDate = startDate;
         this.endDate = endDate;
         this.rentTotal = rentTotal;
         this.penalty = penalty;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RentOrder rentOrder = (RentOrder) o;
+        return id == rentOrder.id &&
+                Objects.equals(vehicleList, rentOrder.vehicleList) &&
+                Objects.equals(startDate, rentOrder.startDate) &&
+                Objects.equals(endDate, rentOrder.endDate) &&
+                Objects.equals(rentTotal, rentOrder.rentTotal) &&
+                Objects.equals(penalty, rentOrder.penalty);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, vehicleList, startDate, endDate, rentTotal, penalty);
+    }
+
+    @Override
+    public String toString() {
+        return "RentOrder{" +
+                "id=" + id +
+                ", vehicleList=" + vehicleList +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", rentTotal=" + rentTotal +
+                ", penalty=" + penalty +
+                '}';
+    }
+
+    public VehicleList getVehicleList() {
+        return vehicleList;
+    }
+
+    public void setVehicleList(VehicleList vehicleList) {
+        this.vehicleList = vehicleList;
     }
 
     public long getId() {
@@ -28,13 +73,6 @@ public class RentOrder {
         this.id = id;
     }
 
-    public AbstractVehicle getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(AbstractVehicle vehicle) {
-        this.vehicle = vehicle;
-    }
 
     public Date getStartDate() {
         return startDate;
