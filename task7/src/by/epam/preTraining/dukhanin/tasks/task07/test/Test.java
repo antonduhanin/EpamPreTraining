@@ -30,27 +30,30 @@ public class Test {
         vehicleList.add(car);
         vehicleList.add(truck);
         System.out.println("contains truck and car? " + vehicleList.containsAll(vehicles));
+        vehicleList.remove(1);
+        System.out.println("size after delete: "+vehicleList.size());
+        vehicleList.add(vehicles[1]);
         System.out.println();
-
 
         //test service
         VehicleService service = new VehicleService();
 
         // test total price
-        System.out.println("total price: " + service.findTotalPrice(vehicleList).toString());
+        System.out.println("total price: " + service.findTotalPrice(vehicleList).toString()+"\n");
 
         //test find findVehiclesYoungerThan
-        service.findVehiclesYoungerThan(vehicleList, 2000);
-        for (int i = 0; i < vehicleList.size(); i++) {
-            System.out.println("year model of vehicle: " + vehicleList.get(i).getYearModel());
+        VehicleList youngCars = service.findVehiclesYoungerThan(vehicleList, 2000);
+        System.out.println("vehicles younger than 2000 year model");
+        for (int i = 0; i < youngCars.size(); i++) {
+            System.out.println("year model of vehicle: " + youngCars.get(i).getYearModel());
         }
-
-        vehicleList.add(car);
+        System.out.println();
 
         //test find findVehiclesByColor
-        service.findVehicleByColor(vehicleList, "red");
-        for (int i = 0; i < vehicleList.size(); i++) {
-            System.out.println("color of vehicle: " + vehicleList.get(i).getColor());
+        VehicleList vehicleListWithSameColor = service.findVehicleByColor(vehicleList, "red");
+        System.out.println("vehicles with color of red");
+        for (int i = 0; i < vehicleListWithSameColor.size(); i++) {
+            System.out.println("color of vehicle: " + vehicleListWithSameColor.get(i).getColor());
         }
 
         //test rent order

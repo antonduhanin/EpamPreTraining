@@ -1,19 +1,20 @@
 package by.epam.preTraining.dukhanin.tasks.task07.model.logic.services;
 
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.AbstractVehicle;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.VehicleList;
 
 import java.math.BigDecimal;
 
 public class VehicleService {
 
-    public void findVehiclesYoungerThan(VehicleList vehicleList, int yearModel) {
+    public VehicleList findVehiclesYoungerThan(VehicleList vehicleList, int yearModel) {
+        VehicleList youngCars = new VehicleList();
         for (int i = 0; i < vehicleList.size(); i++) {
-            if (vehicleList.get(i).getYearModel() < yearModel) {
-                vehicleList.remove(i);
+            if (vehicleList.get(i).getYearModel() >= yearModel) {
+                youngCars.add(vehicleList.get(i));
             }
         }
+        return youngCars;
     }
 
     public BigDecimal findTotalPrice(VehicleList vehicleList) {
@@ -24,13 +25,13 @@ public class VehicleService {
         return price;
     }
 
-    public AbstractVehicle findVehicleByColor(VehicleList vehicleList, String color) {
-        AbstractVehicle vehicle = null;
+    public VehicleList findVehicleByColor(VehicleList vehicleList, String color) {
+        VehicleList vehicleListWithSameColor = new VehicleList();
         for (int i = 0; i < vehicleList.size(); i++) {
             if (vehicleList.get(i).getColor().equals(color)) {
-                vehicle = vehicleList.get(i);
+                vehicleListWithSameColor.add(vehicleList.get(i));
             }
         }
-        return vehicle;
+        return vehicleListWithSameColor;
     }
 }
