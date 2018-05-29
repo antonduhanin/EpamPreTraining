@@ -24,7 +24,6 @@ public class VehicleList {
         for (int i = 0; i < newAbstractVehicles.length; i++) {
             vehicles[oldSize + i] = newAbstractVehicles[i];
         }
-
     }
 
     public boolean isEmpty() {
@@ -79,9 +78,14 @@ public class VehicleList {
         size = 0;
     }
 
+    public AbstractVehicle[] toArray(){
+        return vehicles;
+    }
+
     private void rangeCheck(int index) {
         if (index >= size)
             throw new IndexOutOfBoundsException();
     }
+
 
 }

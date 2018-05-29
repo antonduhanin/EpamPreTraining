@@ -1,6 +1,7 @@
 package by.epam.preTraining.dukhanin.tasks.task07.model.logic.services;
 
 
+import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.AbstractVehicle;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.VehicleList;
 
 import java.math.BigDecimal;
@@ -34,4 +35,21 @@ public class VehicleService {
         }
         return vehicleListWithSameColor;
     }
+
+    public void sortVehicleByYearModel(VehicleList vehicleList) {
+        if (vehicleList == null || vehicleList.size() == 0) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        AbstractVehicle[] vehicles = vehicleList.toArray();
+        for (int i = 0; i < vehicles.length - 1; i++) {
+            for (int j = i + 1; j < vehicles.length; j++) {
+                if (vehicles[i].getYearModel() < vehicles[j].getYearModel()) {
+                    AbstractVehicle temp = vehicles[i];
+                    vehicles[i] = vehicles[j];
+                    vehicles[j] =temp;
+                }
+            }
+        }
+    }
+
 }

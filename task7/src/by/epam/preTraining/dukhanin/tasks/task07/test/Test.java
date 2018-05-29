@@ -6,6 +6,7 @@ import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.Car;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.RentOrder;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.Truck;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.services.VehicleService;
+import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.DequeVehicle;
 import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.VehicleList;
 
 import java.math.BigDecimal;
@@ -56,9 +57,36 @@ public class Test {
             System.out.println("color of vehicle: " + vehicleListWithSameColor.get(i).getColor());
         }
 
+
+        car =new Car(1, "sierra", 2007, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);
+        vehicleList.add(car);
+        car = new Car(1, "sierra", 2003, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);;
+        vehicleList.add(car);
+        System.out.println("before sort");
+
+        for(int i=0;i<vehicleList.size();i++){
+            System.out.println(vehicleList.get(i).toString());
+        }
+
+
+        System.out.println("after sort");
+        service.sortVehicleByYearModel(vehicleList);
+        for(int i=0;i<vehicleList.size();i++){
+            System.out.println(vehicleList.get(i).toString());
+        }
+
         //test rent order
         RentOrder rentOrder = new RentOrder(1, vehicleList, new Date(), new Date(), new BigDecimal(12), new BigDecimal(0));
 
+        System.out.println("...............................................................................");
+        DequeVehicle dequeVehicle = new DequeVehicle();
+        car =new Car(1, "sierra", 5, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);
+        dequeVehicle.push(car);
 
+        car =new Car(1, "sierra", 6, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);
+
+        dequeVehicle.push(car);
+        System.out.println(dequeVehicle.pop());
+        System.out.println(dequeVehicle.pop());
     }
 }
