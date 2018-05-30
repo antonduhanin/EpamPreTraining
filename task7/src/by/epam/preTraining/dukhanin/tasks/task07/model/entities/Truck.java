@@ -1,9 +1,9 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
+package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Truck extends AbstractVehicle {
+public class Truck extends Vehicle {
     public final static String VEHICLE_TYPE = "Truck";
     private int payload;
     private String typeDriverLicense;
@@ -17,6 +17,10 @@ public class Truck extends AbstractVehicle {
         super.setVehicleType(VEHICLE_TYPE);
         this.payload = payload;
         this.typeDriverLicense = typeDriverLicense;
+    }
+
+    public Truck(Truck truck) {
+        this(truck.id, truck.model, truck.yearModel, truck.color, truck.price, truck.dailyPrice, truck.payload, truck.typeDriverLicense);
     }
 
     @Override

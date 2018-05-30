@@ -1,10 +1,10 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
+package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
 
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class Car extends AbstractVehicle {
+public class Car extends Vehicle {
     public final static String VEHICLE_TYPE = "Car";
     private int numberOfSeats;
     private int trunkSpace;
@@ -18,6 +18,10 @@ public class Car extends AbstractVehicle {
         super.setVehicleType(VEHICLE_TYPE);
         this.numberOfSeats = numberOfSeats;
         this.trunkSpace = trunkSpace;
+    }
+
+    public Car(Car car) {
+        this(car.id, car.model, car.yearModel, car.color, car.price, car.dailyPrice, car.numberOfSeats, car.trunkSpace);
     }
 
     @Override

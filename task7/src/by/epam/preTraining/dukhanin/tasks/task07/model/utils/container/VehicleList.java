@@ -1,28 +1,37 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container;
+package by.epam.preTraining.dukhanin.tasks.task07.model.utils.container;
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities.AbstractVehicle;
+import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Vehicle;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class VehicleList {
-    private AbstractVehicle[] vehicles;
+    private Vehicle[] vehicles;
     private int size;
 
     public VehicleList() {
-        vehicles = new AbstractVehicle[size];
+        vehicles = new Vehicle[size];
     }
 
-    public VehicleList(VehicleList rentList) {
-        vehicles = rentList.vehicles;
+    public VehicleList(Vehicle[] vehicles) {
+        this.vehicles = vehicles;
+        size = vehicles.length;
     }
 
-    public void add(AbstractVehicle... newAbstractVehicles) {
+    @Override
+    public String toString() {
+        return "VehicleList{" +
+                Arrays.toString(vehicles) +
+                '}';
+    }
+
+    public void add(Vehicle... newVehicles) {
         int oldSize = size;
-        size += newAbstractVehicles.length;
+        size += newVehicles.length;
         vehicles = Arrays.copyOf(vehicles, size);
 
-        for (int i = 0; i < newAbstractVehicles.length; i++) {
-            vehicles[oldSize + i] = newAbstractVehicles[i];
+        for (int i = 0; i < newVehicles.length; i++) {
+            vehicles[oldSize + i] = newVehicles[i];
         }
     }
 
@@ -30,7 +39,7 @@ public class VehicleList {
         return size == 0;
     }
 
-    public AbstractVehicle get(int index) {
+    public Vehicle get(int index) {
         rangeCheck(index);
         return vehicles[index];
     }
@@ -39,7 +48,7 @@ public class VehicleList {
         return size;
     }
 
-    public boolean contains(AbstractVehicle vehicle) {
+    public boolean contains(Vehicle vehicle) {
         if (vehicle == null) {
             for (int i = 0; i < size; i++)
                 if (vehicles[i] == null)
@@ -52,8 +61,8 @@ public class VehicleList {
         return false;
     }
 
-    public boolean containsAll(AbstractVehicle[] vehicles) {
-        for (AbstractVehicle v : vehicles) {
+    public boolean containsAll(Vehicle[] vehicles) {
+        for (Vehicle v : vehicles) {
             if (contains(v) == false) {
                 return false;
             }
@@ -78,7 +87,7 @@ public class VehicleList {
         size = 0;
     }
 
-    public AbstractVehicle[] toArray(){
+    public Vehicle[] toArray() {
         return vehicles;
     }
 

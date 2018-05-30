@@ -1,10 +1,10 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
+package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 
-public abstract class AbstractVehicle {
+public class Vehicle {
     protected long id;
     protected String vehicleType;
     protected String model;
@@ -13,10 +13,10 @@ public abstract class AbstractVehicle {
     protected BigDecimal price;
     protected BigDecimal dailyPrice;
 
-    public AbstractVehicle() {
+    public Vehicle() {
     }
 
-    public AbstractVehicle(long id, String model, int yearModel, String color, BigDecimal price, BigDecimal dailyPrice) {
+    public Vehicle(long id, String model, int yearModel, String color, BigDecimal price, BigDecimal dailyPrice) {
         this.id = id;
         this.model = model;
         this.yearModel = yearModel;
@@ -25,11 +25,15 @@ public abstract class AbstractVehicle {
         this.dailyPrice = dailyPrice;
     }
 
+    public Vehicle(Vehicle vehicle) {
+        this(vehicle.id, vehicle.model, vehicle.yearModel, vehicle.color, vehicle.price, vehicle.dailyPrice);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        AbstractVehicle vehicle = (AbstractVehicle) o;
+        Vehicle vehicle = (Vehicle) o;
         return id == vehicle.id &&
                 yearModel == vehicle.yearModel &&
                 Objects.equals(vehicleType, vehicle.vehicleType) &&
@@ -47,7 +51,7 @@ public abstract class AbstractVehicle {
 
     @Override
     public String toString() {
-        return "AbstractVehicle{" +
+        return "Vehicle{" +
                 "id=" + id +
                 ", vehicleType='" + vehicleType + '\'' +
                 ", model='" + model + '\'' +

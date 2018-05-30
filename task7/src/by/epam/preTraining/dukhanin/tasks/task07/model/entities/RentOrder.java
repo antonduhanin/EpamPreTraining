@@ -1,6 +1,6 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.entities;
+package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.logic.utils.container.VehicleList;
+import by.epam.preTraining.dukhanin.tasks.task07.model.utils.container.VehicleList;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -24,6 +24,10 @@ public class RentOrder {
         this.endDate = endDate;
         this.rentTotal = rentTotal;
         this.penalty = penalty;
+    }
+
+    public RentOrder(RentOrder rentOrder) {
+        this(rentOrder.id, rentOrder.vehicleList, rentOrder.startDate, rentOrder.endDate, rentOrder.rentTotal, rentOrder.penalty);
     }
 
     @Override
