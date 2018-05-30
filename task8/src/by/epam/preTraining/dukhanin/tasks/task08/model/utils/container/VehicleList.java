@@ -1,8 +1,7 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.utils.container;
+package by.epam.preTraining.dukhanin.tasks.task08.model.utils.container;
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Vehicle;
+import by.epam.preTraining.dukhanin.tasks.task08.model.entities.Vehicle;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class VehicleList {

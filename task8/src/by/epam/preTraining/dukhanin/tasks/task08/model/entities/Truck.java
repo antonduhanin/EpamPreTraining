@@ -1,4 +1,4 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
+package by.epam.preTraining.dukhanin.tasks.task08.model.entities;
 
 import java.math.BigDecimal;
 import java.util.Objects;

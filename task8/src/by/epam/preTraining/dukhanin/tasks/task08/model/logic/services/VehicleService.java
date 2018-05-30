@@ -1,8 +1,8 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.logic.services;
+package by.epam.preTraining.dukhanin.tasks.task08.model.logic.services;
 
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Vehicle;
-import by.epam.preTraining.dukhanin.tasks.task07.model.utils.container.VehicleList;
+import by.epam.preTraining.dukhanin.tasks.task08.model.entities.Vehicle;
+import by.epam.preTraining.dukhanin.tasks.task08.model.utils.container.VehicleList;
 
 import java.math.BigDecimal;
 

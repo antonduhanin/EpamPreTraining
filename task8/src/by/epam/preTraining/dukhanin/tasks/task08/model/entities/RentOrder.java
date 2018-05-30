@@ -1,6 +1,6 @@
-package by.epam.preTraining.dukhanin.tasks.task07.model.entities;
+package by.epam.preTraining.dukhanin.tasks.task08.model.entities;
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.utils.container.VehicleList;
+import by.epam.preTraining.dukhanin.tasks.task08.model.utils.container.VehicleList;
 
 import java.math.BigDecimal;
 import java.util.Date;

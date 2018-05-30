@@ -1,10 +1,10 @@
-package by.epam.preTraining.dukhanin.tasks.task07.test;
+package by.epam.preTraining.dukhanin.tasks.task08.test;
 
 
-import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Car;
-import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Truck;
-import by.epam.preTraining.dukhanin.tasks.task07.model.utils.container.VehicleDeque;
-import by.epam.preTraining.dukhanin.tasks.task07.model.utils.container.VehicleQueue;
+import by.epam.preTraining.dukhanin.tasks.task08.model.entities.Car;
+import by.epam.preTraining.dukhanin.tasks.task08.model.entities.Truck;
+import by.epam.preTraining.dukhanin.tasks.task08.model.utils.container.VehicleDeque;
+import by.epam.preTraining.dukhanin.tasks.task08.model.utils.container.VehicleQueue;
 
 import java.math.BigDecimal;
 
