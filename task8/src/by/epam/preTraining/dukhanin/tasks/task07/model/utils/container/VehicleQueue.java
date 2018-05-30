@@ -4,22 +4,22 @@ import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Vehicle;
 
 import java.util.Arrays;
 
-public class QueueVehicle {
+public class VehicleQueue {
     private Vehicle[] vehicles;
     private int size;
 
-    public QueueVehicle() {
+    public VehicleQueue() {
         vehicles = new Vehicle[0];
     }
 
-    public QueueVehicle(QueueVehicle queueVehicle) {
-        vehicles = queueVehicle.vehicles;
-        size = queueVehicle.size;
+    public VehicleQueue(VehicleQueue VehicleDeque) {
+        vehicles = VehicleDeque.vehicles;
+        size = VehicleDeque.size;
     }
 
     @Override
     public String toString() {
-        return "QueueVehicle{" + Arrays.toString(vehicles) +
+        return "VehicleQueue{" + Arrays.toString(vehicles) +
                 '}';
     }
 

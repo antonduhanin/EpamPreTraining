@@ -5,22 +5,22 @@ import by.epam.preTraining.dukhanin.tasks.task07.model.entities.Vehicle;
 import java.util.Arrays;
 
 
-public class DequeVehicle {
+public class VehicleDeque {
     private Vehicle[] vehicles;
     private int size;
 
-    public DequeVehicle() {
+    public VehicleDeque() {
         this.vehicles = new Vehicle[0];
     }
 
-    public DequeVehicle(DequeVehicle dequeVehicle) {
-        vehicles = dequeVehicle.vehicles;
-        size = dequeVehicle.size;
+    public VehicleDeque(VehicleDeque VehicleDeque) {
+        vehicles = VehicleDeque.vehicles;
+        size = VehicleDeque.size;
     }
 
     @Override
     public String toString() {
-        return "DequeVehicle{" +
+        return "VehicleDeque{" +
                 Arrays.toString(vehicles) +
                 '}';
     }
