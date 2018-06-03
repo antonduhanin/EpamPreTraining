@@ -5,22 +5,22 @@ import by.epam.preTraining.dukhanin.tasks.task08.model.entities.Vehicle;
 import java.util.Arrays;
 
 
-public class VehicleDeque {
+public class VehicleStack {
     private Vehicle[] vehicles;
     private int size;
 
-    public VehicleDeque() {
+    public VehicleStack() {
         this.vehicles = new Vehicle[0];
     }
 
-    public VehicleDeque(VehicleDeque VehicleDeque) {
-        vehicles = VehicleDeque.vehicles;
-        size = VehicleDeque.size;
+    public VehicleStack(VehicleStack VehicleStack) {
+        vehicles = VehicleStack.vehicles;
+        size = VehicleStack.size;
     }
 
     @Override
     public String toString() {
-        return "VehicleDeque{" +
+        return "VehicleStack{" +
                 Arrays.toString(vehicles) +
                 '}';
     }
@@ -31,17 +31,29 @@ public class VehicleDeque {
     }
 
     public Vehicle pop() {
-        if (size == 0) {
-            throw new ArrayIndexOutOfBoundsException("stack is empty");
-        }
+        checkSize();
         Vehicle vehicle = vehicles[--size];
         vehicles[size] = null;
         return vehicle;
     }
 
-    public int peek() {
+    public Vehicle peek() {
+        checkSize();
+        return vehicles[size - 1];
+    }
+
+    public int getSize() {
         return size;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    private void checkSize() {
+        if (size == 0) {
+            throw new ArrayIndexOutOfBoundsException("stack is empty");
+        }
+    }
 
 }

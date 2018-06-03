@@ -23,7 +23,7 @@ public class VehicleQueue {
                 '}';
     }
 
-    public void insert(Vehicle vehicle) {
+    public void enqueue(Vehicle vehicle) {
         Vehicle[] newVehicles = new Vehicle[++size];
         System.arraycopy(vehicles, 0, newVehicles, 1, size - 1);
         newVehicles[0] = vehicle;
@@ -31,12 +31,29 @@ public class VehicleQueue {
 
     }
 
-    public Vehicle remove() {
-        if (size == 0) {
-            return null;
-        }
+    public Vehicle dequeue() {
+        checkSize();
         Vehicle vehicle = vehicles[size - 1];
         vehicles[--size] = null;
         return vehicle;
+    }
+
+    public Vehicle peek() {
+        checkSize();
+        return vehicles[size - 1];
+    }
+
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    private void checkSize() {
+        if (size == 0) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 }
