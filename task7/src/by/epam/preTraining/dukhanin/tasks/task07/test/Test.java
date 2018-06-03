@@ -54,21 +54,6 @@ public class Test {
         System.out.println("vehicles with color of red");
         System.out.println(vehicleListWithSameColor + "\n");
 
-
-        car = new Car(1, "sierra", 2007, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);
-        vehicleList.add(car);
-        car = new Car(1, "sierra", 2003, "red", new BigDecimal(460), new BigDecimal(4), 4, 190);
-
-        vehicleList.add(car);
-        System.out.println("before sort");
-
-        System.out.println(vehicleList + "\n");
-
-
-        System.out.println("after sort");
-        service.sortVehicleByYearModel(vehicleList);
-        System.out.println(vehicleList + "\n");
-
         //test rent order
         RentOrder rentOrder = new RentOrder(1, vehicleList, new Date(), new Date(), new BigDecimal(12), new BigDecimal(0));
 
