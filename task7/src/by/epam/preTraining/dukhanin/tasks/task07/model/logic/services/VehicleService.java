@@ -36,20 +36,4 @@ public class VehicleService {
         return vehicleListWithSameColor;
     }
 
-    public void sortVehicleByYearModel(VehicleList vehicleList) {
-        if (vehicleList == null || vehicleList.size() == 0) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        Vehicle[] vehicles = vehicleList.toArray();
-        for (int i = 0; i < vehicles.length - 1; i++) {
-            for (int j = i + 1; j < vehicles.length; j++) {
-                if (vehicles[i].getYearModel() < vehicles[j].getYearModel()) {
-                    Vehicle temp = vehicles[i];
-                    vehicles[i] = vehicles[j];
-                    vehicles[j] =temp;
-                }
-            }
-        }
-    }
-
 }

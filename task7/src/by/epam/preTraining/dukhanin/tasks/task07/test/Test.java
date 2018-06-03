@@ -35,6 +35,9 @@ public class Test {
         vehicleList.add(vehicles[1]);
         System.out.println();
 
+        //test entities
+        Car copyCar = new Car(car);
+        System.out.println("copy car: "+copyCar+"\n");
         //test service
         VehicleService service = new VehicleService();
 
