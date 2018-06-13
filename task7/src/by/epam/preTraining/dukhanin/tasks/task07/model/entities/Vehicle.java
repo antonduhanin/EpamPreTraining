@@ -6,7 +6,6 @@ import java.util.Objects;
 
 public class Vehicle {
     protected long id;
-    protected String vehicleType;
     protected String model;
     protected int yearModel;
     protected String color;
@@ -36,7 +35,6 @@ public class Vehicle {
         Vehicle vehicle = (Vehicle) o;
         return id == vehicle.id &&
                 yearModel == vehicle.yearModel &&
-                Objects.equals(vehicleType, vehicle.vehicleType) &&
                 Objects.equals(model, vehicle.model) &&
                 Objects.equals(color, vehicle.color) &&
                 Objects.equals(price, vehicle.price) &&
@@ -46,14 +44,13 @@ public class Vehicle {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, vehicleType, model, yearModel, color, price, dailyPrice);
+        return Objects.hash(id, model, yearModel, color, price, dailyPrice);
     }
 
     @Override
     public String toString() {
         return "Vehicle{" +
                 "id=" + id +
-                ", vehicleType='" + vehicleType + '\'' +
                 ", model='" + model + '\'' +
                 ", yearModel=" + yearModel +
                 ", color='" + color + '\'' +
@@ -68,14 +65,6 @@ public class Vehicle {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
     }
 
     public String getModel() {

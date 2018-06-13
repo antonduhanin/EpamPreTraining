@@ -5,17 +5,16 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Car extends Vehicle {
-    public final static String VEHICLE_TYPE = "Car";
+
     private int numberOfSeats;
     private int trunkSpace;
 
     public Car() {
-        super.setVehicleType(VEHICLE_TYPE);
+
     }
 
     public Car(long id, String model, int yearModel, String color, BigDecimal price, BigDecimal dailyPrice, int numberOfSeats, int trunkSpace) {
         super(id, model, yearModel, color, price, dailyPrice);
-        super.setVehicleType(VEHICLE_TYPE);
         this.numberOfSeats = numberOfSeats;
         this.trunkSpace = trunkSpace;
     }
@@ -46,7 +45,6 @@ public class Car extends Vehicle {
                 "numberOfSeats=" + numberOfSeats +
                 ", trunkSpace=" + trunkSpace +
                 ", id=" + id +
-                ", vehicleType='" + vehicleType + '\'' +
                 ", model='" + model + '\'' +
                 ", yearModel=" + yearModel +
                 ", color='" + color + '\'' +
